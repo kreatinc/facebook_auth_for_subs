@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/callback', function(Request $request){
-    return $request->all();
+    return view('welcome', ['name' => $request->name , 'email' => $request->email]);
 });
 
 Route::get('/', function () {

@@ -42,11 +42,17 @@
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-1">
 
                         <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                            @if(isset($name) && isset($email))
+                            <p class="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
+                                Hello {{ $name }}, here's your email {{ $email }}.
+                                We will be getting in touch with you soon.
+                            </p>
+                            @else
                             <a href="http://auth.kreatinc.dev/redirect?url=page.kreatinc.dev" class="">
-                                
                                 <h2 class="mt-2 text-xl font-semibold text-gray-900 dark:text-white">Facebook Connect</h2>
-
                             </a>
+                            @endif
+
                         </div>
 
                     </div>
